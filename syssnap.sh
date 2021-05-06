@@ -35,6 +35,11 @@ free -m >> $_destlogs/syssnap-${_NOW}.log
 echo >> $_destlogs/syssnap-${_NOW}.log
 
 echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
+echo "w : " >> $_destlogs/syssnap-${_NOW}.log
+w  >> $_destlogs/syssnap-${_NOW}.log
+echo >> $_destlogs/syssnap-${_NOW}.log
+
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
 echo "TOP : " >> $_destlogs/syssnap-${_NOW}.log
 top -b -n 1 >> $_destlogs/syssnap-${_NOW}.log
 echo >> $_destlogs/syssnap-${_NOW}.log
