@@ -34,43 +34,50 @@ echo >> $_destlogs/syssnap-${_NOW}.log
 free -m >> $_destlogs/syssnap-${_NOW}.log
 echo >> $_destlogs/syssnap-${_NOW}.log
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "w : " >> $_destlogs/syssnap-${_NOW}.log
-w  >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which w &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "w : " >> $_destlogs/syssnap-${_NOW}.log; \
+w  >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "TOP : " >> $_destlogs/syssnap-${_NOW}.log
-top -b -n 1 >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which top &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "TOP : " >> $_destlogs/syssnap-${_NOW}.log; \
+top -b -n 1 >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo 'PS :' >> $_destlogs/syssnap-${_NOW}.log
-ps auxf   >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which ps &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo 'PS :' >> $_destlogs/syssnap-${_NOW}.log; \
+ps auxf   >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "IOSTATS:" >> $_destlogs/syssnap-${_NOW}.log
-iostat   >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which iostat &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "IOSTATS:" >> $_destlogs/syssnap-${_NOW}.log; \
+iostat   >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "NETSTAT:" >> $_destlogs/syssnap-${_NOW}.log
-netstat -tulpn >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which netstat &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "NETSTAT:" >> $_destlogs/syssnap-${_NOW}.log; \
+netstat -tulpn >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "NVidia-SMI:" >> $_destlogs/syssnap-${_NOW}.log
-/usr/bin/env nvidia-smi >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which nvidia-smi &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "NVidia-SMI:" >> $_destlogs/syssnap-${_NOW}.log; \
+/usr/bin/env nvidia-smi >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "CPU Temps:" >> $_destlogs/syssnap-${_NOW}.log
-/usr/bin/env sensors >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
+which sensors &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "CPU Temps:" >> $_destlogs/syssnap-${_NOW}.log; \
+/usr/bin/env sensors >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
 
-echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log
-echo "Disk Usage:" >> $_destlogs/syssnap-${_NOW}.log
-/usr/bin/env df -hT >> $_destlogs/syssnap-${_NOW}.log
-echo >> $_destlogs/syssnap-${_NOW}.log
-
+which du &> /dev/null && ( \
+echo "------------------------------------------------------------" >> $_destlogs/syssnap-${_NOW}.log; \
+echo "Disk Usage:" >> $_destlogs/syssnap-${_NOW}.log; \
+/usr/bin/env df -hT >> $_destlogs/syssnap-${_NOW}.log; \
+echo >> $_destlogs/syssnap-${_NOW}.log; )
